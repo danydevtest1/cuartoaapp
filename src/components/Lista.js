@@ -2,11 +2,14 @@ import React, {useState} from 'react';
 import Datos from './Datos';
 import {lista} from "../datos/ListDatos";
 
+import './lista.css';
+
 export default function Lista() {
    
     const [datos, setDatos]=useState(lista)
   return (
-    <div>
+   
+       <div className='row row-cols-1 row-cols-md-3 g-4 p-4'>
         {
             datos.map(
                 (persona)=>
@@ -18,7 +21,7 @@ export default function Lista() {
                 imagenes={persona.imag}
                 />)
         }
-        
-    </div>
+        </div>
+   
   )
 }
