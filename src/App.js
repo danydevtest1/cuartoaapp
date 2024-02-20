@@ -1,15 +1,12 @@
-//import Datos from "./components/Datos";
-import BarraMenu from "./components/BarraMenu";
-import Lista from "./components/Lista";
+//import Lista from "./components/Lista";
+import {BrowserRouter} from 'react-router-dom';
+import Rutas from "./routes/Rutas";
 
 function App() {
   return (
-    <div>
-     <BarraMenu/>
-     <Lista/>
-
-    </div>
-  
+    <BrowserRouter>
+  <Rutas/>
+  </BrowserRouter>
   );
 }
 
