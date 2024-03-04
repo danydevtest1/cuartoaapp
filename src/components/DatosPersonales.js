@@ -5,7 +5,8 @@ export default function DatosPersonales() {
     nombre: "",
     direccion: "",
     correo:'',
-    estado:""
+    estado:"",
+    telefono:""
   };
 
   const [datos, setDatos] = useState(valores);
