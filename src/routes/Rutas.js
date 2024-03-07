@@ -6,6 +6,7 @@ import Layout from '../layout/Layout';
 import Home from '../pages/Home';
 import Lista from '../components/Lista';
 import DatosPersonales from '../components/DatosPersonales';
+import Tabla from '../components/Tabla';
 
 
 export default function Rutas() {
@@ -15,6 +16,7 @@ export default function Rutas() {
         <Route path='/' exact element={<Home/>}/>
         <Route path='/lista' exact element={<Lista/>}/>
         <Route path='/datos' exact element={<DatosPersonales/>}/>
+        <Route path='/tabla' exact element={<Tabla/>}/>
     </Routes>
     </Layout>
   )

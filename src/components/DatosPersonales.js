@@ -5,36 +5,33 @@ export default function DatosPersonales() {
   const valores = {
     nombre: "",
     direccion: "",
-    correo:'',
-    estado:"",
-    telefono:""
+    correo: "",
+    estado: "",
+    telefono: "",
   };
 
   const [datos, setDatos] = useState(valores);
 
-  
-
   //Funcion para obtener los inputs
-  const onChange=(e)=>{
-    const {name,value}=e.target;
-    setDatos({...datos, [name]:value})
-  }
+  const onChange = (e) => {
+    const { name, value } = e.target;
+    setDatos({ ...datos, [name]: value });
+  };
 
-  const GuardarDatos=()=>{
-    Axios.post("/datos/saveData",datos)
-    .then(()=>{
+  const GuardarDatos = () => {
+    Axios.post("/datos/saveData", datos).then(() => {
       console.log("Datos enviados correctamente");
-    })
-  }
+    });
+  };
 
   //Funcion para el onsubmit
 
   const onSubmit = (e) => {
     e.preventDefault();
-   // console.log(datos);
-   GuardarDatos();
+    // console.log(datos);
+    GuardarDatos();
   };
-  
+
   return (
     <div class="card">
       <div class="card-body">
@@ -80,7 +77,7 @@ export default function DatosPersonales() {
                 id="validationCustomUsername"
                 placeholder="Correo"
                 value={datos.correo}
-              onChange={onChange}
+                onChange={onChange}
                 aria-describedby="inputGroupPrepend"
                 required
               />
@@ -98,7 +95,19 @@ export default function DatosPersonales() {
               onChange={onChange}
               required
             />
-            </div>
+          </div>
+          <div class="col-md-12">
+            <input
+              type="text"
+              name="telefono"
+              class="form-control"
+              id="validationCustom03"
+              placeholder="Telefono"
+              value={datos.telefono}
+              onChange={onChange}
+              required
+            />
+          </div>
           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <button class="btn btn-primary" type="submit">
               Enviar
