@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Axios from "../services/Axios";
 
 export default function DatosPersonales() {
   const valores = {
@@ -11,12 +12,7 @@ export default function DatosPersonales() {
 
   const [datos, setDatos] = useState(valores);
 
-  //Funcion para el onsubmit
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-    console.log(datos);
-  };
+  
 
   //Funcion para obtener los inputs
   const onChange=(e)=>{
@@ -24,6 +20,21 @@ export default function DatosPersonales() {
     setDatos({...datos, [name]:value})
   }
 
+  const GuardarDatos=()=>{
+    Axios.post("/datos/saveData",datos)
+    .then(()=>{
+      console.log("Datos enviados correctamente");
+    })
+  }
+
+  //Funcion para el onsubmit
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+   // console.log(datos);
+   GuardarDatos();
+  };
+  
   return (
     <div class="card">
       <div class="card-body">
