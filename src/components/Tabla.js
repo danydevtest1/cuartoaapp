@@ -12,7 +12,7 @@ function Tabla() {
     }
 
     const Delete=async(id)=>{
-
+      const eliminar=await Axios.delete(`/datos/delete/${id}`);
     }
 
     useEffect(() => {
@@ -44,7 +44,7 @@ function Tabla() {
       <td>{datos.telefono}</td>
       <td>{datos.direccion}</td>
       <td><button type="button" class="btn btn-info">Modificar</button></td>
-      <td><button type="button" class="btn btn-danger">Eliminar</button></td>
+      <td><button type="button" class="btn btn-danger" onClick={()=>Delete(datos._id)}>Eliminar</button></td>
     </tr>
  
  
