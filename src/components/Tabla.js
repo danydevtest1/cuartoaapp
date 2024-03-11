@@ -11,6 +11,10 @@ function Tabla() {
         //console.log(buscar);
     }
 
+    const Delete=async(id)=>{
+
+    }
+
     useEffect(() => {
      buscarDatos();
     }, [])
@@ -24,6 +28,8 @@ function Tabla() {
       <th scope="col">Nombre</th>
       <th scope="col">Telefono</th>
       <th scope="col">Dirección</th>
+      <th scope="col">Modificar</th>
+      <th scope="col">Eliminar</th>
     </tr>
   </thead>
      {
@@ -37,6 +43,8 @@ function Tabla() {
       <td>{datos.nombre}</td>
       <td>{datos.telefono}</td>
       <td>{datos.direccion}</td>
+      <td><button type="button" class="btn btn-info">Modificar</button></td>
+      <td><button type="button" class="btn btn-danger">Eliminar</button></td>
     </tr>
  
  
