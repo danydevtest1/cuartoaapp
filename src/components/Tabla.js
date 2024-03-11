@@ -12,11 +12,14 @@ function Tabla() {
     }
 
     const Delete=async(id)=>{
-      const eliminar=await Axios.delete(`/datos/delete/${id}`);
+      const eliminar=await Axios.delete(`/datos/delete/${id}`)
+      .then(()=> alert("Datos eliminados"));
+      buscarDatos();
     }
 
     useEffect(() => {
      buscarDatos();
+    
     }, [])
     
   return (
