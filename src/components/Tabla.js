@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import Axios from '../services/Axios';
-
+import {useNavigate} from "react-router-dom"
 
 function Tabla() {
     const [listaDatos,setListaDatos] = useState([]);
+
+    const navigate=useNavigate();
 
     const buscarDatos=async()=>{
         const buscar= await Axios.get("/datos/buscar");
@@ -16,6 +18,8 @@ function Tabla() {
       .then(()=> alert("Datos eliminados"));
       buscarDatos();
     }
+
+    
 
     useEffect(() => {
      buscarDatos();
@@ -46,7 +50,7 @@ function Tabla() {
       <td>{datos.nombre}</td>
       <td>{datos.telefono}</td>
       <td>{datos.direccion}</td>
-      <td><button type="button" class="btn btn-info">Modificar</button></td>
+      <td><button type="button" class="btn btn-info" onClick={()=> navigate(`/datos/${datos._id}`)}>Modificar</button></td>
       <td><button type="button" class="btn btn-danger" onClick={()=>Delete(datos._id)}>Eliminar</button></td>
     </tr>
  

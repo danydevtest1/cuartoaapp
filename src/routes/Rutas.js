@@ -16,6 +16,7 @@ export default function Rutas() {
         <Route path='/' exact element={<Home/>}/>
         <Route path='/lista' exact element={<Lista/>}/>
         <Route path='/datos' exact element={<DatosPersonales/>}/>
+        <Route path='/datos/:id' exact element={<DatosPersonales/>}/>
         <Route path='/tabla' exact element={<Tabla/>}/>
     </Routes>
     </Layout>
